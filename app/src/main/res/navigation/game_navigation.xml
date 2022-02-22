@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/mainHWFragment2">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ubaya.adv160419039week2.MainFragment"
+        android:label="Main Screen"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/actionGameFragment"
+            app:destination="@id/gameFragment"
+            app:enterAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.ubaya.adv160419039week2.GameFragment"
+        android:label="Game Screen"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="player_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainHWFragment2"
+        android:name="com.ubaya.adv160419039week2.MainHWFragment"
+        android:label="fragment_main_h_w"
+        tools:layout="@layout/fragment_main_h_w">
+        <action
+            android:id="@+id/actionResultHW"
+            app:destination="@id/resultHWFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultHWFragment2"
+        android:name="com.ubaya.adv160419039week2.ResultHWFragment"
+        android:label="fragment_result_h_w"
+        tools:layout="@layout/fragment_result_h_w">
+        <action
+            android:id="@+id/actionMainHW"
+            app:destination="@id/mainHWFragment2" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+</navigation>
